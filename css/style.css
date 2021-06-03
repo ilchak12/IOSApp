@@ -674,7 +674,7 @@ p {
 
 .header {
   padding-top: 30px;
-  background-image: url(img/header-bg.png);
+  background-image: url("/img/header-bg.png");
   background-size: cover;
   background-color: #f0f3f3;
   position: relative;
