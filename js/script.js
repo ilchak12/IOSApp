@@ -33,7 +33,6 @@ let menu2 = document.querySelector(".menu-2");
 let fixedHeader = document.querySelector(".fixed-header");
 let header = document.querySelector(".header__top");
 
-//створється івент при натисканні на мобільне меню
 burgerMenu.addEventListener("click", function() {
     burgerMenu.classList.toggle("active-menu");
     if(burgerMenu.classList.contains("active-menu")) {
@@ -50,34 +49,29 @@ burgerMenu.addEventListener("click", function() {
 })
 
 //Модальне вікно
-//Шукаємо елементи модального вікна
+
 let modalWindow = document.querySelector(".modal");
 let downloadCode = document.querySelector(".download");
 let closeBtn = document.querySelector(".modal .btn-close");
 
-//функція закриття вікна
 function closeModal() {
     modalWindow.classList.add("hide");
     modalWindow.classList.remove("show");
 }
 
-//функція відкриття
 function openModal() {
     modalWindow.classList.add("show");
     modalWindow.classList.remove("hide");
 }
 
-//Івент при натиску на "Завантажити" (тоді якраз відкривається вікно модальне)
 downloadCode.addEventListener("click", function() {
     openModal();
 })
 
-//Закриття вікна поза межами (коли клікаєш за межі модального воно закривається)
 modalWindow.addEventListener("click", function(e) {
     if(e.target == modalWindow) {
         closeModal();
     }
 })
 
-//Закриття модального на хрестик
 closeBtn.addEventListener("click", closeModal);
