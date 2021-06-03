@@ -1,0 +1,72 @@
+@import './mixins.scss';
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+[class*=col-] {
+    padding: 0 15px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    @for $i from 1 through 12 {
+        .col-lg-#{$i} {
+            flex: percentage($i/12);
+            max-width: percentage($i/12);
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+
+    @for $i from 1 through 12 {
+        .col-md-#{$i} {
+            flex: percentage($i/12);
+            max-width: percentage($i/12);
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+
+    @for $j from 1 through 12 {
+        .col-sm-#{$j} {
+            flex: percentage($j/12);
+            max-width: percentage($j/12);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 450px;
+    }
+
+    .col-xs-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .col-xs-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}

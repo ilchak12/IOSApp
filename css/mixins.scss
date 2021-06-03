@@ -1,0 +1,75 @@
+@mixin tablet {
+    @media (min-width: 768px) and (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 767px){
+        @content;
+    }
+}
+
+@mixin mob-tab {
+    @include mobile {
+        @content;
+    }
+
+    @include tablet {
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: 992px) and (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin  flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-col-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin flex-vert {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-horiz {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin hide {
+    display: none;
+}
+
+@mixin hide-elem {
+    visibility: hidden;
+    opacity: 0;
+}
+
+@mixin show-elem {
+    visibility: visible;
+    opacity: 1;
+}
