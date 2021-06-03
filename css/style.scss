@@ -1,6 +1,9 @@
+//імпорт інших файлів
 @import "./grid.scss";
 @import "./variables.scss";
 @import "./mixins.scss";
+
+//задання загальних стилів
 
 * {
     box-sizing: border-box;
@@ -76,9 +79,11 @@ h6 {
     }
 }
 
-a {
+a,
+span {
     text-decoration: none;
     display: block;
+    color: #000;
 }
 
 p {
@@ -94,6 +99,7 @@ p {
     }
 }
 
+//стандартна кнопка
 .dft-btn {
     cursor: pointer;
     padding: 15px 30px;
@@ -115,6 +121,7 @@ p {
     }
 }
 
+//стандартний section 
 .page {
     padding-top: 110px;
     padding-bottom: 120px;
@@ -137,12 +144,14 @@ p {
     }
 }
 
+//логотип для мобільних
 .logo {
     @include mob-tab {
         @include hide;
     }
 }
 
+//меню
 .nav {
     [class*=menu-] {
         display: flex;
@@ -155,16 +164,12 @@ p {
         }
 
         li {
-            a {
+            a,
+            span {
                 color: #000;
                 padding: 10px 20px;
                 border-radius: 30px;
                 transition: all 0.3s ease-in-out;
-
-                // @include mob-tab {
-                //     z-index: 5000;
-                //     position: relative;
-                // }
 
                 @include mobile {
                     font-size: 30px;
@@ -189,6 +194,7 @@ p {
     }
 }
 
+//навігація мобільного меню
 .navigation {
     @include mob-tab {
         width: 100%;
@@ -213,6 +219,7 @@ p {
     }
 }
 
+//мобільне меню
 .burger-menu {
     &.active-menu .line:nth-child(1) {
         @include mob-tab {
@@ -284,6 +291,7 @@ p {
     }
 }
 
+//зафіксована шапка сторінки (тіпа щоб меню не рухалось коли скролиш сторінку)
 .fixed-header {
     position: fixed;
     z-index: 5000;
@@ -291,10 +299,6 @@ p {
     left: 0;
     right: 0;
     background-color: transparent;
-
-    // @include mob-tab {
-    //     z-index: 90;
-    // }
 
     .header__top {
         display: flex;
@@ -310,6 +314,7 @@ p {
     }
 }
 
+//шапка сторінки
 .header {
     padding-top: 30px;
     background-image: url(/img/header-bg.png);
@@ -379,7 +384,9 @@ p {
     }
 }
 
+//основні секції (section)
 .main {
+    //секція особливості
     [class*=feature-] {
         .feature__logo {
             margin-bottom: 40px;
@@ -396,10 +403,14 @@ p {
         }
     }
 
+    //секція мобільні і картові особливості
     .phone-feature,
     .map-feature {
-        @include flex-col-center;
-        text-align: center;
+        @include mob-tab {
+            text-align: center;
+            @include flex-col-center;
+        }
+
         .title {
             margin-bottom: 70px;
 
@@ -413,6 +424,7 @@ p {
         }
     }
 
+    //роздільна лінія між секціями
     .line {
         height: 1px;
         width: 100%;
@@ -425,6 +437,7 @@ p {
         background-color: $colorBlue;
     }
 
+    //телефон (той шо картинка)
     .phone {
         width: 100%;
 
@@ -437,6 +450,7 @@ p {
         }
     }
 
+    //карта (та шо картинка)
     .map {
         width: 100%;
 
@@ -448,11 +462,6 @@ p {
             display: none;
         }
     }
-
-    .stars {
-        color: #f2bc3b;
-        margin-bottom: 10px;
-    }
 }
 
 .features-phone {
@@ -461,7 +470,7 @@ p {
     }
 }
 
-
+//вирівнювання кнопок і "партнерів" на мобільних
 .btns,
 .partners {
     display: flex;
@@ -487,6 +496,7 @@ p {
     }
 }
 
+//заголовки сторінки
 .page-title {
     @include flex-col;
     align-items: center;
@@ -496,6 +506,7 @@ p {
     }
 }
 
+//секція інтерфейс
 .screens {
     background-color: #f5f5f8;
 
@@ -505,6 +516,7 @@ p {
     }
 }
 
+//стилі для слайдера
 .slider {
     width: 100%;
     display: flex;
@@ -513,6 +525,7 @@ p {
     background-color: #f5f5f8;
     margin-bottom: 100px;
 
+    //для одного слайда
     .slide {
         max-width: 320px;
         margin: 15px auto;
@@ -540,6 +553,7 @@ p {
     }
 }
 
+//форма надсилання на пошту
 .invite {
     border: 1px solid #a5a7ab;
     border-radius: 30px;
@@ -555,6 +569,7 @@ p {
         align-items: center;
     }
 
+    //стилі для рядка з поштою
     .email-inp {
         outline: none;
         border: none;
@@ -572,6 +587,7 @@ p {
         }
     }
 
+    //кнопка надіслати
     .btn-send {
         &:hover {
             background-color: #6fc754;
@@ -580,6 +596,7 @@ p {
     }
 }
 
+//фото (те шо Download from appstore)
 .store {
     max-width: 200px;
 
@@ -588,6 +605,7 @@ p {
     }
 }
 
+//секція платних підписок
 .pracing {
     background-color: #27292D;
 
@@ -608,6 +626,7 @@ p {
 
     }
 
+    //підписки
     .plan-items {
         width: 100%;
         display: flex;
@@ -617,6 +636,7 @@ p {
             @include flex-col-center;
         }
 
+        //стилі для одної підписки
         .plan-item {
             @include flex-col;
             justify-content: space-between;
@@ -710,6 +730,7 @@ p {
     }
 }
 
+//секція розсилки
 .newsletter.page {
     padding: 80px 0;
 }
@@ -737,6 +758,7 @@ p {
     }
 }
 
+//низ сторінки (там де лого, фотка завантаження і соціальні мережі)
 .footer {
     padding: 80px 0 50px;
 
@@ -766,6 +788,7 @@ p {
     }
 }
 
+//стилі для соціальних мережей
 .social {
     @include flex-center;
 
@@ -788,6 +811,8 @@ p {
 }
 
 
+
+//додаткові настройки для слайдера
 .slick-prev,
 .slick-next {
     color: $colorBlue !important; 
@@ -798,10 +823,84 @@ p {
     color: $colorBlue !important;
 }
 
+//стилі при відкритті мобільного меню
 .byScroll {
     background-color: #f0f3f3;
     padding-bottom: 15px;
     transition: all 1s ease-in-out;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+}
+
+//стилі для кнопки "Завантаження" на пк і мобільному
+.download-mob {
+    display: none;
+
+    @include mob-tab {
+        display: block;
+    }
+}
+
+.download-pc {
+    display: block;
+
+    @include mob-tab {
+        display: none;
+    }
+}
+
+//модальне вікно
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100000;
+    display: none;
+
+    .modal-block {
+        text-align: center;
+        width: 100%;
+        max-width: 300px;
+        max-width: max-content;
+        margin: 100px auto;
+        height: max-content;
+        border-radius: 10px;
+        background-color: rgba($color: #27292D, $alpha: 1);
+        padding: 15px;
+    }
+}
+
+//QR-код стилі
+.QRCode {
+    margin-bottom: 15px;
+
+    img {
+        width: 100%;
+    }
+}
+
+.btn-close {
+    text-align: right;
+    cursor: pointer;
+    width: max-content;
+    margin: 0 0 0 auto;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 15px;
+
+    &:hover {
+        background-color: #27292D;
+        color: $colorBlue;
+    }
+}
+
+.hide {
+    @include hide;
+}
+
+.show {
+    @include show;
 }

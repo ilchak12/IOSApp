@@ -1,5 +1,7 @@
+//Підключення дод. файла
 @import './mixins.scss';
 
+//Основні стилі для сайту
 .container {
     width: 100%;
     padding: 0 15px;
@@ -16,6 +18,7 @@
     padding: 0 15px;
 }
 
+//Адаптація для звичайних ПК
 @media (min-width: 1200px) {
     .container {
         max-width: 1140px;
@@ -29,6 +32,7 @@
     }
 }
 
+//Для ноутбуків
 @media (min-width: 992px) and (max-width: 1199px) {
     .container {
         max-width: 960px;
@@ -42,6 +46,7 @@
     }
 }
 
+//Для планшетів
 @media (min-width: 768px) and (max-width: 991px) {
     .container {
         max-width: 720px;
@@ -55,6 +60,7 @@
     }
 }
 
+//Для мобільних
 @media (max-width: 767px) {
     .container {
         max-width: 450px;

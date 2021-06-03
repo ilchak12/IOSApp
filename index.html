@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Основні стилі -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- Стилі слайдера -->
     <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
 
+    <!-- Іконки -->
     <link rel="stylesheet" href="css/fontawesome/all.css">
 
+    <!-- Підключення шрифтів -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
@@ -20,6 +23,7 @@
     <title>Providence</title>
 </head>
 <body>
+    <!-- Фіксована шапка з меню -->
     <div class="fixed-header hidden-menu navigation byScroll">
         <div class="container">
             <div class="row">
@@ -39,7 +43,8 @@
                             <ul class="menu-2 navigation hidden-menu">
                                 <li><a href="#uiID">Інтерфейс</a></li>
                                 <li><a href="#supportID">Розсилка</a></li>
-                                <li><a href=""><i class="fab fa-apple"></i> Завантажити</a></li>
+                                <li class="download-pc"><span class="download"><i class="fab fa-apple"></i> Завантажити</span></li>
+                                <li class="download-mob"><a href="https://www.apple.com/ua/app-store/" target="_blank"><i class="fab fa-apple"></i> Завантажити</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -47,12 +52,14 @@
             </div>
         </div>
     </div>
+    <!-- Мобільне меню -->
     <div class="burger-menu">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
     </div>
 
+    <!-- Загальна шапка (Основна) -->
     <header class="header" id="mainID">
         <div class="container">
             <div class="row">
@@ -67,8 +74,8 @@
                                     <div class="desc">
                                         <p>newprovidence буде сповіщати про події в календарі які відбудуться завтра, інформуватиме про навколишній світ навколо вас! </p>
                                     </div>
-
-                                    <button class="dft-btn video"><i class="fas fa-play"></i> Переглянути</button>
+                                    <a href="https://www.youtube.com/watch?v=65JrtwtTOdc" target="_blank"><button class="dft-btn video"><i class="fas fa-play"></i> Переглянути</button></a>
+                                    
 
                                     <div class="phone-info">
                                         <img src="img/header-phone.png" alt="">
@@ -81,7 +88,9 @@
         </div>
     </header>
 
+    <!-- Основні секції -->
     <main class="main">
+        <!-- секція особливостей -->
         <section class="features page" id="featuresID">
             <div class="container">
                 <div class="row">
@@ -125,6 +134,7 @@
             </div>
         </div>
 
+        <!-- Мобільні особливості -->
         <section class="features-phone page">
             <div class="container">
                 <div class="row">
@@ -148,7 +158,7 @@
 
                             <div class="btns">
                                 <button class="dft-btn">Спробуй зламати <i class="fas fa-arrow-circle-right"></i></button>
-                                <button class="dft-btn">Дізнатись більше</button>
+                                <a href="https://www.apple.com/ua/" target="_blank"><button class="dft-btn">Дізнатись більше</button></a>
                             </div>
                         </div>
                     </div>
@@ -156,6 +166,7 @@
             </div>
         </section>
 
+        <!-- Картові особливості -->
         <section class="features-map page">
             <div class="container">
                 <div class="row">
@@ -190,6 +201,7 @@
             </div>
         </section>
 
+        <!-- Інтерфейс секція -->
         <section class="screens page" id="uiID">
             <div class="container">
                 <div class="row">
@@ -252,7 +264,9 @@
                             </div>
 
                             <div class="store">
-                                <img src="img/appstore.png" alt="">
+                                <a href="https://www.apple.com/ua/app-store/" target="_blank">
+                                    <img src="img/appstore.png" alt="">
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -260,6 +274,7 @@
             </div>
         </section>
 
+        <!-- Секція підписок -->
         <section class="pracing page" id="pracingID">
             <div class="container">
                 <div class="row">
@@ -319,6 +334,7 @@
             </div>
         </section>
 
+        <!-- Секція розсилки -->
         <section class="newsletter page" id="supportID">
             <div class="container">
                 <div class="row">
@@ -350,6 +366,7 @@
         </div>
     </main>
 
+    <!-- Низ сайта -->
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -359,7 +376,9 @@
                     </div>
 
                     <div class="store">
-                        <img src="img/appstore.png" alt="">
+                        <a href="https://www.apple.com/ua/app-store/" target="_blank">
+                            <img src="img/appstore.png" alt="">
+                        </a>
                     </div>
 
                     <ul class="social">
@@ -373,11 +392,25 @@
             </div>
         </div>
     </footer>
+    <!-- Модальне вікно -->
+    <div class="modal qr">
+        <div class="modal-block">
+            <div class="btn-close"><i class="fas fa-window-close"></i></div>
+            <div class="QRCode">
+                <img src="img/qr-codeApp.png" alt="">
+            </div>
+            <div class="desc">
+                <p>Відскануй QR-код та завантажуй!</p>
+            </div>
+        </div>
+    </div>
 
+    <!-- Підключення JavaScript слайдера -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="js/slick/slick.min.js"></script>
 
+    <!-- Підключення JavaScript файла основного (той шо script.js) -->
     <script src="js/script.js"></script>
 </body>
 </html>

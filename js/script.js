@@ -1,14 +1,5 @@
-let header = document.querySelector(".header__top");
-
-// window.addEventListener("scroll", function() {
-//     if(pageYOffset > 50) {
-//         header.classList.add("byScroll");
-//     } else {
-//         header.classList.remove("byScroll")
-//     }
-// })
-
-
+//Слайдер
+//Настройки слайдера на для ПК, планшета і мобільного
 $('.slider').slick({
     slidesToShow: 3,
     slidesToScroll: 1,               
@@ -34,11 +25,15 @@ $('.slider').slick({
     ]
 });
 
+//Мобільне меню
+//Шукаємо елементи меню та мобільного меню
 let burgerMenu = document.querySelector(".burger-menu");
 let menu1 = document.querySelector(".menu-1");
 let menu2 = document.querySelector(".menu-2");
 let fixedHeader = document.querySelector(".fixed-header");
+let header = document.querySelector(".header__top");
 
+//створється івент при натисканні на мобільне меню
 burgerMenu.addEventListener("click", function() {
     burgerMenu.classList.toggle("active-menu");
     if(burgerMenu.classList.contains("active-menu")) {
@@ -53,3 +48,36 @@ burgerMenu.addEventListener("click", function() {
         fixedHeader.classList.remove("active-menu")
     }
 })
+
+//Модальне вікно
+//Шукаємо елементи модального вікна
+let modalWindow = document.querySelector(".modal");
+let downloadCode = document.querySelector(".download");
+let closeBtn = document.querySelector(".modal .btn-close");
+
+//функція закриття вікна
+function closeModal() {
+    modalWindow.classList.add("hide");
+    modalWindow.classList.remove("show");
+}
+
+//функція відкриття
+function openModal() {
+    modalWindow.classList.add("show");
+    modalWindow.classList.remove("hide");
+}
+
+//Івент при натиску на "Завантажити" (тоді якраз відкривається вікно модальне)
+downloadCode.addEventListener("click", function() {
+    openModal();
+})
+
+//Закриття вікна поза межами (коли клікаєш за межі модального воно закривається)
+modalWindow.addEventListener("click", function(e) {
+    if(e.target == modalWindow) {
+        closeModal();
+    }
+})
+
+//Закриття модального на хрестик
+closeBtn.addEventListener("click", closeModal);

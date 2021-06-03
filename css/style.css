@@ -322,9 +322,11 @@ h6 {
   }
 }
 
-a {
+a,
+span {
   text-decoration: none;
   display: block;
+  color: #000;
 }
 
 p {
@@ -426,23 +428,27 @@ p {
     flex-direction: column;
   }
 }
-.nav [class*=menu-] li a {
+.nav [class*=menu-] li a,
+.nav [class*=menu-] li span {
   color: #000;
   padding: 10px 20px;
   border-radius: 30px;
   transition: all 0.3s ease-in-out;
 }
 @media (max-width: 767px) {
-  .nav [class*=menu-] li a {
+  .nav [class*=menu-] li a,
+.nav [class*=menu-] li span {
     font-size: 30px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .nav [class*=menu-] li a {
+  .nav [class*=menu-] li a,
+.nav [class*=menu-] li span {
     font-size: 38px;
   }
 }
-.nav [class*=menu-] li a:hover {
+.nav [class*=menu-] li a:hover,
+.nav [class*=menu-] li span:hover {
   background-color: #267df4;
   color: #fff;
 }
@@ -756,13 +762,25 @@ p {
 .main [class*=feature-] .title h4 {
   font-family: "Open Sans", sans-serif;
 }
-.main .phone-feature,
+@media (max-width: 767px) {
+  .main .phone-feature,
 .main .map-feature {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .main .phone-feature,
+.main .map-feature {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 .main .phone-feature .title,
 .main .map-feature .title {
@@ -821,10 +839,6 @@ p {
   .main .map {
     display: none;
   }
-}
-.main .stars {
-  color: #f2bc3b;
-  margin-bottom: 10px;
 }
 
 .features-phone .row {
@@ -1157,6 +1171,85 @@ p {
   transition: all 1s ease-in-out;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+}
+
+.download-mob {
+  display: none;
+}
+@media (max-width: 767px) {
+  .download-mob {
+    display: block;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .download-mob {
+    display: block;
+  }
+}
+
+.download-pc {
+  display: block;
+}
+@media (max-width: 767px) {
+  .download-pc {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .download-pc {
+    display: none;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100000;
+  display: none;
+}
+.modal .modal-block {
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  max-width: max-content;
+  margin: 100px auto;
+  height: max-content;
+  border-radius: 10px;
+  background-color: #27292d;
+  padding: 15px;
+}
+
+.QRCode {
+  margin-bottom: 15px;
+}
+.QRCode img {
+  width: 100%;
+}
+
+.btn-close {
+  text-align: right;
+  cursor: pointer;
+  width: max-content;
+  margin: 0 0 0 auto;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 15px;
+}
+.btn-close:hover {
+  background-color: #27292D;
+  color: #267df4;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -64,6 +64,10 @@
     display: none;
 }
 
+@mixin show {
+    display: block;
+}
+
 @mixin hide-elem {
     visibility: hidden;
     opacity: 0;
